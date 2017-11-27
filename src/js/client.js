@@ -36,7 +36,7 @@ const store = createStore(reducer, middleware); //initial state is 1
 //step 4
 
 store.dispatch({
-    type: "FETCH_USERS",
+    type: "FETCH_USERS_PENDING",
     payload: axios.get("http://rest.learncode.academy/api/wstern/users")   
 });
 
