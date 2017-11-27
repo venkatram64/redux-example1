@@ -2,7 +2,7 @@ const Person = {
     firstName : 'Venkatram',
     lastName : 'Veerareddy'
 };
-
+//declarative way creating object
 const copyPerson = Object.assign({},Person, {age: 50});
 console.dir(Person);
 console.dir(copyPerson);
@@ -10,11 +10,11 @@ console.log(Person === copyPerson);
 
 //
 let colors = ['Venkatram','Srijan','Chintu','Aaryan','Krish'];
-let newColors = colors.concat('Tinku');
+let newColors = colors.concat('Tinku'); //return new object
 
 console.dir(colors);
 console.dir(newColors);
-let modifiedColors = colors.slice((colors.length - 1), 1);
+let modifiedColors = colors.slice((colors.length - 1), 1); //return new object
 console.dir(modifiedColors);
 console.dir(colors);
 
@@ -40,9 +40,9 @@ const finalSum = actions2.reduce((state, action) =>{
     console.log('prev: ', state, 'current: ', action);
     switch(action.type){
         case 'add':
-            return Object.assign({}, state, {sum:state.sum + action.value});
+            return Object.assign({}, state, {sum:state.sum + action.value}); //return new object
         case 'subtract':
-        return Object.assign({}, state, {sum:state.sum - action.value});
+        return Object.assign({}, state, {sum:state.sum - action.value}); //return new object
         default:
             return state;
     }
