@@ -28,13 +28,13 @@ const reducer = (state = initialState, action) =>{
     return state;   
 }
 
-const middleware = applyMiddleware(thunk, logger());
+const middleware = applyMiddleware(thunk, logger()); //thunk middleware
 //step 1
 const store = createStore(reducer, middleware); //initial state is 1
 
 //step 4
 store.dispatch((dispatch) => {
-    dispatch({type: "FETCH_USERS_START"});
+    dispatch({type: "FETCH_USERS_START"}); //dispatch event
     axios.get("http://rest.learncode.academy/api/wstern/users")
         .then(response =>{
             dispatch({type: "RECEIVE_USERS", payload: response.data}); 

@@ -27,14 +27,14 @@ const error = (store) => (next) => (action) =>{
 }
     
 
-const middleware = applyMiddleware(logger, error);
+const middleware = applyMiddleware(logger, error); //intercepts each and every call
 
 //step 1
 const store = createStore(reducer, 1, middleware); //initial state is 1
 
 //step 3
 store.subscribe( () => {
-    console.log("store changed. ", store.getState());
+    console.log("store changed. ", store.getState());  //this is not needed
 });
 //step 4
 store.dispatch({type: "INC"});

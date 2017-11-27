@@ -4,7 +4,7 @@ import {combineReducers, createStore} from "redux";
 const userReducer = (state = {}, action) => {
     switch(action.type){
         case "CHANGE_NAME": {
-            state = {...state, name: action.payload};
+            state = {...state, name: action.payload};//return alway new state
             break;
         }
         case "CHANGE_AGE": {
@@ -23,13 +23,7 @@ const reducers = combineReducers({
     tweets: tweetsReducer   
 });
 //step 1
-const store = createStore(reducers/*, {
-    user: {
-        name: "Venkatram",
-        age: 50
-    },
-    tweets: []
-}*/); 
+const store = createStore(reducers); 
 
 //step 3
 store.subscribe( () => {
