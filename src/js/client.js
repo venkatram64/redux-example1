@@ -43,5 +43,6 @@ store.dispatch({
 //https://www.youtube.com/watch?v=JicUNpwLzLY
 //https://www.youtube.com/watch?v=1QI-UE3-0PU
 //https://www.youtube.com/watch?v=aJxcVidE0I0
+//lodash -.omit,_.mapKeys
 
 
