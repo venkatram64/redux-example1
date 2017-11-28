@@ -40,5 +40,8 @@ store.dispatch({
     payload: axios.get("http://rest.learncode.academy/api/wstern/users")   
 });
 
+//https://www.youtube.com/watch?v=JicUNpwLzLY
+//https://www.youtube.com/watch?v=1QI-UE3-0PU
+//https://www.youtube.com/watch?v=aJxcVidE0I0
 
 
