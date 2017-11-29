@@ -1,48 +1,24 @@
+const _ = require('lodash');
 
-import {applyMiddleware, createStore} from "redux";
-import axios from "axios";
-import logger from "redux-logger";
-import thunk from "redux-thunk";
-import promise from "redux-promise-middleware";
+let dinosaurs = [
+    {name: 'Terry' ,species: 'Tyrannosaurus', pen: '1A'},
+    {name: 'Theresa' ,species: 'Tyrannosaurus', pen: '1B'},
+    {name: 'Henry' ,species: 'Hadrosaur', pen: '2'},
+    {name: 'Harriet' ,species: 'Hadrosaur', pen: '3'},
+    {name: 'Stanley' ,species: 'Stegosaurus', pen: '4'}
+];
 
-const initialState = {
-    fetching: false,
-    fetched: false,
-    users: [],
-    error: null
+const test1 = () =>{
+   let dino =  _.find(dinosaurs, (d) =>{
+        return d.name === 'Stanley';
+    });
+    console.log(dino);
 }
 
-//step 2
-const reducer = (state = initialState, action) =>{
-    if(action.type === "FETCH_USERS_PENDING"){
-        return {...state, fetching: true};
-    }else if(action.type === "RECEIVE_USERS_FULFILLED"){
-        return {
-            ...state, 
-            fetching: false, 
-            fetched: true, 
-            users: action.payload
-        };
-    }else if(action.type === "RECEIVE_USERS_REJECTED"){
-        return {...state, fetching: false, error: action.payload};    
-    }
-    return state;   
+const allNames = () => {
+    let ln = _.pluck(dinosaurs, 'name');
 }
 
-const middleware = applyMiddleware(promise(), thunk, logger());
-//step 1
-const store = createStore(reducer, middleware); //initial state is 1
-
-//step 4
-
-store.dispatch({
-    type: "FETCH_USERS_PENDING",
-    payload: axios.get("http://rest.learncode.academy/api/wstern/users")   
-});
-
-//https://www.youtube.com/watch?v=JicUNpwLzLY
-//https://www.youtube.com/watch?v=1QI-UE3-0PU
-//https://www.youtube.com/watch?v=aJxcVidE0I0
-//lodash -.omit,_.mapKeys
-
-
+module.exports = {
+    test1:test1
+}
