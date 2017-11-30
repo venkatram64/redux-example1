@@ -19,6 +19,24 @@ const allNames = () => {
     let ln = _.pluck(dinosaurs, 'name');
 }
 
+var objects = [
+    {id:1, color:'Ram'},
+    {id:2, color:'Lxman'},
+    {id:3, color:'Bharath'},
+    {id:3, color:'Bharath'},
+    {id:1, color:'Ram'},
+    {id:5, color:'Shathragnu'},
+    {id:6, color:'Dasharath'},
+    {id:3, color:'Bharath'},
+    {id:7, color:'Arjun'},
+    {id:2, color:'Lxman'}
+]
+
+const uniqueNames = () =>{
+    un = _.uniqBy(objects,'id');
+    console.log(un);
+}
+
 module.exports = {
     test1:test1
 }
